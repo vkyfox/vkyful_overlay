@@ -190,7 +190,7 @@ td:last-child {
 		];
 
 		function trueHeal(combatant, index){
-			return Math.round((100-parseInt(combatant['OverHealPct']))*(combatant['enchps'])/100,1);
+			return  Math.round((100-parseInt(combatant['OverHealPct']))*(parseInt(combatant['enchps']))/100,1);
 
 		};
 
