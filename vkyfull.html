@@ -180,7 +180,8 @@ td:last-child {
 			{ text: "Job", width: "2em", align: "center" },
 			{ text: "Name", width: "8em", align: "center" },
 			{ text: "DPS", width: "3.5em", align: "center" },
-			{ text: "Best Hit", width: "5em", align: "center" },
+			{ text: "Best", width: "2em", align: "right" },
+			{ text: "Hit", width: "3em", align: "left" },
 			{ text: "trueHPS", width: "3.3em", align: "right" },
 			{ text: "(OvH%)", width: "3em", align: "left" },
 			{ text: "Crit", width: "2.5em", align: "center" },
@@ -195,9 +196,12 @@ td:last-child {
 
 		function besthit (combatant, index) {
 			var tableau = combatant['maxhit'].split("-");
-			return tableau[tableau.length-2].substring(0,2)+tableau[tableau.length-2].substring(5,7)+':'+tableau[tableau.length-1];
+			return tableau[tableau.length-1];
 		};
-
+		function shortbesthit (combatant, index) {
+			var tableau = combatant['maxhit'].split("-");
+			return tableau[tableau.length-2].substring(0,3)+':';
+		};
 		function edps (combatant, index) {
 			return Math.round(combatant['encdps'],1)
 		};
@@ -207,7 +211,8 @@ td:last-child {
 			{ html: "<img src='./images/colorbg/{JobOrName}.png' style='width=60%;height:60%;' />", align: "center", effect: dpsBarEffect },
 			{ text: "{name}", width: "", align: "center",effect: myCharacterEffect, },
 			{ text: edps, width: "", align: "center"},
-			{ text: besthit, width: "", align: "center" },
+			{ text: shortbesthit, width: "", align: "right" },
+			{ text: besthit, width: "", align: "right" },
 			{ text: trueHeal, width: "", align: "right" },
 			{ text: "({OverHealPct})", width: "", align: "left" },
 			{ text: "{crithit%}", width: "", align: "center" },
