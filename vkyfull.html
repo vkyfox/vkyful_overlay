@@ -199,7 +199,12 @@ td:last-child {
 		};
 		function shortbesthit (combatant, index) {
 			var tableau = combatant['maxhit'].split("-");
-			return tableau[tableau.length-2].substring(0,3)+':';
+			if(tableau.length==2){
+				if (tableau[tableau.length-2]!=undefined){
+					return tableau[tableau.length-2].substring(0,3)+':';
+				}
+			}
+			return "undefined";
 		};
 		function edps (combatant, index) {
 			return Math.round(parseInt(combatant['encdps']),1)
