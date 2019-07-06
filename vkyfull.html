@@ -14,7 +14,7 @@ body, html {
 }
 
 html {
-	background-image: url(handle.png);
+	background-image: url(image/handle.png);
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	box-sizing: border-box;
@@ -203,7 +203,7 @@ td:last-child {
 			return tableau[tableau.length-2].substring(0,3)+':';
 		};
 		function edps (combatant, index) {
-			return Math.round(combatant['encdps'],1)
+			return Math.round(parseInt(combatant['encdps']),1)
 		};
 		// 表示するデータの定義
 		var bodyDefine =
