@@ -3,4 +3,4 @@ A very simple reskin of a Rainbowmage overlay to account for the true HPS instea
 # You will need the following for the overlay to work:
 * ACT: https://advancedcombattracker.com/
 * FFXIV Parsing Plugin: https://github.com/ravahn/FFXIV_ACT_Plugin/releases
-* OverlayPlugin : https://github.com/ezsoftware/OverlayPlugin/releases
+* OverlayPlugin : https://github.com/hibiyasleep/OverlayPlugin
