@@ -169,6 +169,7 @@ td:last-child {
 		//
 
 		// エンカウント情報の定義
+		var SIZE_SHORTENING=10000; // If DPS/Healing etc. is greater than this number, shorten it
 		var encounterDefine = "Time:<span class='enc'>{duration}</span> &nbsp;&nbsp;&nbsp;Total DPS:<span class='enc'>{dps}</span> &nbsp;&nbsp;&nbsp;Best Hit:<span class='enc'>{maxhit}</span>";
 
 		// 上記のエンカウント情報を HTML として扱うなら true
@@ -189,13 +190,18 @@ td:last-child {
 			{ text: "Death", width: "2.5em", align: "center" }
 		];
 
+		function shortenit(val){
+			if (val>SIZE_SHORTENING) return Math.round(val/100)/10+"k"
+			return Math.round(val);
+		}
+
 		function trueHeal(combatant, index){
-			return  Math.round((100-parseInt(combatant['OverHealPct']))*(parseInt(combatant['enchps']))/100,1);
+			return  shortenit(Math.round((100-parseInt(combatant['OverHealPct']))*(parseInt(combatant['enchps']))/100,1));
 		};
 
 		function besthit (combatant, index) {
 			var tableau = combatant['maxhit'].split("-");
-			return tableau[tableau.length-1];
+			return shortenit(tableau[tableau.length-1]);
 		};
 		function shortbesthit (combatant, index) {
 			var tableau = combatant['maxhit'].split("-");
@@ -206,8 +212,9 @@ td:last-child {
 			}
 			return "undefined";
 		};
+
 		function edps (combatant, index) {
-			return Math.round(parseInt(combatant['encdps']),1)
+			return shortenit(parseInt(combatant['encdps']));
 		};
 		// 表示するデータの定義
 		var bodyDefine =
