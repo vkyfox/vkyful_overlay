@@ -99,6 +99,7 @@ td:last-child {
 #combatantTableBody .Cnj td,
 #combatantTableBody .Whm td,
 #combatantTableBody .Ast td,
+#combatantTableBody .Sge td,
 #combatantTableBody .Sch td {
 	color: #ffffff;
 	background-color: rgba(107,240,86,0.2);
@@ -118,6 +119,7 @@ td:last-child {
 #combatantTableBody .Smn td,
 #combatantTableBody .Thm td,
 #combatantTableBody .Dnc td,
+#combatantTableBody .Rpr td,
 #combatantTableBody .Blm td {
 	color: #ffffff;
 	background-color: rgba(200,3,8,0.2);
@@ -219,7 +221,7 @@ td:last-child {
 		// 表示するデータの定義
 		var bodyDefine =
 		[
-			{ html: "<img src='./images/colorbg/{JobOrName}.png' style='width=60%;height:60%;' />", align: "center", effect: dpsBarEffect },
+			{ html: "<img src='./images/colorbg/{JobOrName}.png' style='width=16px;height:16px;' />", align: "center", effect: dpsBarEffect },
 			{ text: "{name}", width: "", align: "center",effect: myCharacterEffect, },
 			{ text: edps, width: "", align: "center"},
 			{ text: shortbesthit, width: "", align: "right" },
@@ -256,8 +258,8 @@ td:last-child {
 
 		function dpsBarEffect(cell, combatant, index) {
 			var tank = ["Gla", "Pld", "Mrd", "War", "Drk", "Gnb"]
-			var dps = ["Pgl", "Mnk", "Lnc", "Drg", "Arc", "Brd", "Rog", "Nin", "Acn", "Smn", "Thm", "Blm", "Mch","Rdm","Sam","Dnc"]
-			var healer = ["Cnj", "Whm", "Sch", "Ast"]
+			var dps = ["Pgl", "Mnk", "Lnc", "Drg", "Arc", "Brd", "Rog", "Nin", "Acn", "Smn", "Thm", "Blm", "Mch","Rdm","Sam","Dnc", "Rpr"]
+			var healer = ["Cnj", "Whm", "Sch", "Ast", "Sge"]
 
 			if (index == 0 || typeof dpsBarEffect.topdeeps == 'undefined') {
 				dpsBarEffect.topdeeps = combatant["encdps"];
