@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
 <meta charset="utf-8" />
 <title></title>
@@ -221,7 +221,7 @@ td:last-child {
 		// 表示するデータの定義
 		var bodyDefine =
 		[
-			{ html: "<img src='https://xivapi.com/cj/1/{JobOrName}.png' style='width=18px;height:18px;' />", align: "center", effect: dpsBarEffect },
+			{ html: "<img src='{ImageHyperLink}' style='width=18px;height:18px;' />", align: "center", effect: dpsBarEffect },
 			{ text: "{name}", width: "", align: "center",effect: myCharacterEffect, },
 			{ text: edps, width: "", align: "center"},
 			{ text: shortbesthit, width: "", align: "right" },
@@ -422,8 +422,52 @@ td:last-child {
                    		if (combatantName.search(/\)$/) != -1) {
                    		var combatantName = 'Chocobo';
                    		}
-                			combatant.JobOrName = combatant.Job.toLowerCase() || combatantName;
-					if (combatant.JobOrName = blm) {combatant.JobOrName = blackmage}
+                			combatant.ImageHyperLink = combatant.Job.toLowerCase() || combatantName;
+							classJob = 'https://xivapi.com/cj/companion/';
+							others = 'https://xivapi.com/i/000000/';
+							if (combatant.ImageHyperLink == 'pld') {combatant.ImageHyperLink = classJob + 'paladin.png'}
+							else if (combatant.ImageHyperLink == 'gld') {combatant.ImageHyperLink = classJob + 'gladiator.png'}
+							else if (combatant.ImageHyperLink == 'war') {combatant.ImageHyperLink = classJob + 'warrior.png'}
+							else if (combatant.ImageHyperLink == 'mrd') {combatant.ImageHyperLink = classJob + 'marauder.png'}
+							else if (combatant.ImageHyperLink == 'drk') {combatant.ImageHyperLink = classJob + 'darkknight.png'}
+							else if (combatant.ImageHyperLink == 'gnb') {combatant.ImageHyperLink = classJob + 'gunbreaker.png'}
+							else if (combatant.ImageHyperLink == 'whm') {combatant.ImageHyperLink = classJob + 'whitemage.png'}
+							else if (combatant.ImageHyperLink == 'cnj') {combatant.ImageHyperLink = classJob + 'conjurer.png'}
+							else if (combatant.ImageHyperLink == 'sch') {combatant.ImageHyperLink = classJob + 'scholar.png'}
+							else if (combatant.ImageHyperLink == 'arc') {combatant.ImageHyperLink = classJob + 'arcanist.png'}
+							else if (combatant.ImageHyperLink == 'ast') {combatant.ImageHyperLink = classJob + 'astrologian.png'}
+							else if (combatant.ImageHyperLink == 'sge') {combatant.ImageHyperLink = classJob + 'sage.png'}
+							else if (combatant.ImageHyperLink == 'mnk') {combatant.ImageHyperLink = classJob + 'monk.png'}
+							else if (combatant.ImageHyperLink == 'pgl') {combatant.ImageHyperLink = classJob + 'pugilist.png'}
+							else if (combatant.ImageHyperLink == 'drg') {combatant.ImageHyperLink = classJob + 'dragoon.png'}
+							else if (combatant.ImageHyperLink == 'lnc') {combatant.ImageHyperLink = classJob + 'lancer.png'}
+							else if (combatant.ImageHyperLink == 'nin') {combatant.ImageHyperLink = classJob + 'ninja.png'}
+							else if (combatant.ImageHyperLink == 'rog') {combatant.ImageHyperLink = classJob + 'rogue.png'}
+							else if (combatant.ImageHyperLink == 'sam') {combatant.ImageHyperLink = classJob + 'samurai.png'}
+							else if (combatant.ImageHyperLink == 'rpr') {combatant.ImageHyperLink = classJob + 'reaper.png'}
+							else if (combatant.ImageHyperLink == 'brd') {combatant.ImageHyperLink = classJob + 'bard.png'}
+							else if (combatant.ImageHyperLink == 'arc') {combatant.ImageHyperLink = classJob + 'archer.png'}
+							else if (combatant.ImageHyperLink == 'mch') {combatant.ImageHyperLink = classJob + 'machinist.png'}
+							else if (combatant.ImageHyperLink == 'dnc') {combatant.ImageHyperLink = classJob + 'dancer.png'}
+							else if (combatant.ImageHyperLink == 'blm') {combatant.ImageHyperLink = classJob + 'blackmage.png'}
+							else if (combatant.ImageHyperLink == 'thm') {combatant.ImageHyperLink = classJob + 'thaumaturge.png'}
+							else if (combatant.ImageHyperLink == 'smn') {combatant.ImageHyperLink = classJob + 'summoner.png'}
+							else if (combatant.ImageHyperLink == 'rdm') {combatant.ImageHyperLink = classJob + 'redmage.png'}
+							else if (combatant.ImageHyperLink == 'blu') {combatant.ImageHyperLink = classJob + 'bluemage.png'}
+							else if (combatant.ImageHyperLink == 'crp') {combatant.ImageHyperLink = classJob + 'carpenter.png'}
+							else if (combatant.ImageHyperLink == 'bsm') {combatant.ImageHyperLink = classJob + 'blacksmith.png'}
+							else if (combatant.ImageHyperLink == 'arm') {combatant.ImageHyperLink = classJob + 'armorer.png'}
+							else if (combatant.ImageHyperLink == 'gld') {combatant.ImageHyperLink = classJob + 'goldsmith.png'}
+							else if (combatant.ImageHyperLink == 'ltw') {combatant.ImageHyperLink = classJob + 'leatherworker.png'}
+							else if (combatant.ImageHyperLink == 'wvr') {combatant.ImageHyperLink = classJob + 'weaver.png'}
+							else if (combatant.ImageHyperLink == 'alc') {combatant.ImageHyperLink = classJob + 'alchemist.png'}
+							else if (combatant.ImageHyperLink == 'cul') {combatant.ImageHyperLink = classJob + 'culinarian.png'}
+							else if (combatant.ImageHyperLink == 'min') {combatant.ImageHyperLink = classJob + 'miner.png'}
+							else if (combatant.ImageHyperLink == 'bot') {combatant.ImageHyperLink = classJob + 'botanist.png'}
+							else if (combatant.ImageHyperLink == 'fsh') {combatant.ImageHyperLink = classJob + 'fisher.png'}
+							else if (combatant.ImageHyperLink == 'Limit Break') {combatant.ImageHyperLink = others + '000103_hr1.png'}
+							else if (combatant.ImageHyperLink == 'choco') {combatant.ImageHyperLink = others + '000906_hr1.png'}
+							else combatant.ImageHyperLink = classJob + 'none.png';
                 			var tableRow = newTableBody.insertRow(newTableBody.rows.length);
                 			for (var i = 0; i < bodyDefine.length; i++)
                 			{
